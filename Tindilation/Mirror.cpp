@@ -4,7 +4,8 @@ Mirrors::Mirrors()
 {
 	currentMirror = 0;
 	numOfMirrors = 0;
-	for (int index = 0; index < MAX_NUM; index++)
+	mirror[0].setFillColor(sf::Color::Yellow);
+	for (int index = 1; index < MAX_NUM; index++)
 	{
 		mirror[index].setFillColor(sf::Color::White);
 	}
@@ -18,30 +19,49 @@ void Mirrors::draw(sf::RenderWindow & t_window)
 	}
 }
 
-void Mirrors::rotate()
+void Mirrors::rotate(sf::Event t_event)
 {
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+	if (t_event.key.code == sf::Keyboard::Right)
 	{
-		mirror[currentMirror].rotate(4);
-	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-	{
-		mirror[currentMirror].rotate(-4);
-	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-	{
-		currentMirror--;
-		if (currentMirror < 0)
+		mirror[currentMirror].rotate(rotationValue);
+		if (rotationValue < MAX_ROTATE)
 		{
-			currentMirror = numOfMirrors;
+			rotationValue++;
 		}
 	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+	else if (t_event.key.code == sf::Keyboard::Left)
 	{
-		currentMirror++;
-		if (currentMirror > numOfMirrors)
+		mirror[currentMirror].rotate(-rotationValue);
+		if (rotationValue < MAX_ROTATE)
 		{
-			currentMirror = 0;
+			rotationValue++;
+		}
+	}
+	else
+	{
+		rotationValue = 0;
+	}
+	if (t_event.type == sf::Event::KeyReleased)
+	{
+		if (t_event.key.code == sf::Keyboard::Up)
+		{
+			mirror[currentMirror].setFillColor(sf::Color::White);
+			currentMirror--;
+			if (currentMirror < 0)
+			{
+				currentMirror = numOfMirrors;
+			}
+			mirror[currentMirror].setFillColor(sf::Color::Yellow);
+		}
+		else if (t_event.key.code == sf::Keyboard::Down)
+		{
+			mirror[currentMirror].setFillColor(sf::Color::White);
+			currentMirror++;
+			if (currentMirror > numOfMirrors)
+			{
+				currentMirror = 0;
+			}
+			mirror[currentMirror].setFillColor(sf::Color::Yellow);
 		}
 	}
 }

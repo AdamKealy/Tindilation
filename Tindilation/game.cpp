@@ -63,8 +63,9 @@ void Game::processEvents()
 			{
 				m_exitGame = true;
 			}
-			m_mirrors.rotate();
+			
 		}
+		m_mirrors.rotate(event);
 	}
 }
 
@@ -78,6 +79,7 @@ void Game::update(sf::Time t_deltaTime)
 	{
 		m_window.close();
 	}
+	
 }
 
 /// <summary>
