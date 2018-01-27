@@ -25,7 +25,7 @@ void Laser::render(sf::RenderWindow & t_window)
 		}
 		
 	}*/
-	t_window.draw(lines);
+	//t_window.draw(lines);
 }
 
 void Laser::loadData(LevelData t_leveloader)
@@ -39,4 +39,8 @@ void Laser::collision(sf::RectangleShape mirror[], sf::RectangleShape pipe[], in
 	{
 		collides = true;
 	}*/
+}
+
+void Laser::rotate()
+{
 }
