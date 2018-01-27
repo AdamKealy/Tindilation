@@ -22,6 +22,12 @@ void operator >> (const YAML::Node& levelNode, LevelData& level)
 	}
 }
 
+void operator >> (const YAML::Node& cableNode, CableData& cable)
+{
+	cable.position.x = cableNode["position"]["x"].as<float>();
+	cable.position.y = cableNode["position"]["y"].as<float>();
+}
+
 bool LevelLoader::load(int t_levelNum, LevelData & t_screen)
 {
 	//checks yaml file
