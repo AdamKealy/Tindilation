@@ -81,6 +81,7 @@ void Game::render()
 	m_window.clear(sf::Color::White);
 	m_window.draw(m_welcomeMessage);
 	m_window.draw(m_logoSprite);
+	//m_window.draw(m_laser);
 	m_window.display();
 }
 
