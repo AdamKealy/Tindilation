@@ -7,11 +7,15 @@ class Laser
 {
 public:
 	Laser();
-	Laser(float x,  float y);
 	void render(sf::RenderWindow &t_window);
-	sf::VertexArray lines;
-	void loadData(LevelData t_leveloader);
+	void loadData(LevelData t_data);
+	void collision(sf::RectangleShape mirror[], sf::RectangleShape pipe[], int const MAX_MIRROR, int const MAX_PIPE);
+	void rotate();
+
 private:
-	float xPos;
-	float yPos;
+	std::vector<sf::RectangleShape> m_lasers;
+	bool m_collides;
+	int const LASER_GIRTH = 35;
+	int m_rotation;
+
 };

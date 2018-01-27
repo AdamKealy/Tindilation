@@ -17,7 +17,7 @@ Game::Game() :
 		return;
 	}
 	m_mirrors.loadMirrors(m_level);
-	m_cable.load(m_level);
+	//m_laser.loadData(m_level);
 }
 
 
@@ -66,7 +66,6 @@ void Game::processEvents()
 			}
 			
 		}
-		m_menu.input(event);
 		m_mirrors.rotate(event);
 	}
 }
@@ -92,7 +91,6 @@ void Game::render()
 	m_window.clear();
 	m_window.draw(m_backgroundSprite);
 	m_mirrors.draw(m_window);
-	m_cable.draw(m_window);
 	m_laser.render(m_window);
 
 	m_window.display();
