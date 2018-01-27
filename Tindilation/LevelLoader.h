@@ -15,7 +15,8 @@ struct MirrorData
 
 struct CableData
 {
-	//int length;
+	int length;
+	int rotation;
 	sf::Vector2f position;
 };
 

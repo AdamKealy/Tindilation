@@ -8,7 +8,13 @@ void operator >> (const YAML::Node& mirrorNode, MirrorData& mirror)
 	mirror.position.y = mirrorNode["position"]["y"].as<float>();
 }
 
-//void operator >> (const YAML::Node& laserNode, )
+void operator >> (const YAML::Node& cableNode, CableData& cable)
+{
+	cable.position.x = cableNode["position"]["x"].as<float>();
+	cable.position.y = cableNode["position"]["y"].as<float>();
+	cable.length = cableNode["length"].as<int>();
+	cable.rotation = cableNode["rotation"].as<int>();
+}
 
 //checks information after the word credits
 void operator >> (const YAML::Node& levelNode, LevelData& level)
@@ -20,12 +26,13 @@ void operator >> (const YAML::Node& levelNode, LevelData& level)
 		mirrorNode[i] >> mirror;
 		level.m_mrrors.push_back(mirror);
 	}
-}
-
-void operator >> (const YAML::Node& cableNode, CableData& cable)
-{
-	cable.position.x = cableNode["position"]["x"].as<float>();
-	cable.position.y = cableNode["position"]["y"].as<float>();
+	const YAML::Node& cableNode = levelNode["cables"].as<YAML::Node>();
+	for (unsigned i = 0; i < cableNode.size(); ++i)
+	{
+		CableData cable;
+		cableNode[i] >> cable;
+		level.m_cable.push_back(cable);
+	}
 }
 
 bool LevelLoader::load(int t_levelNum, LevelData & t_screen)

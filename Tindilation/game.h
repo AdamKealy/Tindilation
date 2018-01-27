@@ -5,6 +5,8 @@
 #include <SFML/Graphics.hpp>
 #include "Laser.h"
 #include "Mirror.h"
+#include "Cable.h"
+#include "Menu.h"
 
 class Game
 {
@@ -34,6 +36,8 @@ private:
 	Mirrors m_mirrors;
 	LevelData m_level;
 	Laser m_laser;
+	Cable m_cable;
+	Menu m_menu;
 };
 
 #endif // !GAME
