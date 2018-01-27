@@ -28,12 +28,12 @@ private:
 	sf::RenderWindow m_window; // main SFML window
 	sf::Font m_ArialBlackfont; // font used by message
 	sf::Text m_welcomeMessage; // text used for message on screen
-	sf::Texture m_logoTexture; // texture used for sfml logo
-	sf::Sprite m_logoSprite; // sprite used for sfml logo
+	sf::Texture m_backgroundTexture; // texture used for sfml logo
+	sf::Sprite m_backgroundSprite; // sprite used for sfml logo
 	bool m_exitGame; // control exiting game
 	Mirrors m_mirrors;
 	LevelData m_level;
-	Laser m_laser[5];
+	Laser m_laser;
 };
 
 #endif // !GAME

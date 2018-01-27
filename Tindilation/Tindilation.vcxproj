@@ -32,7 +32,7 @@
     <ClInclude Include="Mirror.h" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\..\..\pictures\SFML-LOGO.png" />
+    <Image Include="ASSETS\IMAGES\background.png" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="ASSETS\FONTS\ariblk.ttf" />
