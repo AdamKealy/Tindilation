@@ -3,6 +3,7 @@
 #define GAME
 
 #include <SFML/Graphics.hpp>
+#include "Laser.h"
 #include "Mirror.h"
 
 class Game
@@ -32,6 +33,7 @@ private:
 	bool m_exitGame; // control exiting game
 	Mirrors m_mirrors;
 	LevelData m_level;
+	Laser m_laser[5];
 };
 
 #endif // !GAME

@@ -17,6 +17,7 @@ Game::Game() :
 		return;
 	}
 	m_mirrors.loadMirrors(m_level);
+
 }
 
 
@@ -88,6 +89,8 @@ void Game::render()
 	m_window.clear();
 
 	m_mirrors.draw(m_window);
+	m_laser[0].render(m_window);
+	m_laser[1].render(m_window);
 
 	m_window.display();
 }
