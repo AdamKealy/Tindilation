@@ -8,6 +8,8 @@ void operator >> (const YAML::Node& mirrorNode, MirrorData& mirror)
 	mirror.position.y = mirrorNode["position"]["y"].as<float>();
 }
 
+//void operator >> (const YAML::Node& laserNode, )
+
 //checks information after the word credits
 void operator >> (const YAML::Node& levelNode, LevelData& level)
 {
