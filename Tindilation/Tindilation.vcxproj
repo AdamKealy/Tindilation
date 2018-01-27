@@ -20,18 +20,23 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp" />
-    <ClCompile Include="Laser.cpp" />
+    <ClCompile Include="LevelLoader.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Mirror.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
-    <ClInclude Include="Laser.h" />
+    <ClInclude Include="LevelLoader.h" />
+    <ClInclude Include="Mirror.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\..\..\pictures\SFML-LOGO.png" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="ASSETS\FONTS\ariblk.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ASSETS\level1.yaml" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

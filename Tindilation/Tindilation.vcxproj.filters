@@ -30,7 +30,10 @@
     <ClCompile Include="Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Laser.cpp">
+    <ClCompile Include="LevelLoader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Mirror.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -38,7 +41,10 @@
     <ClInclude Include="Game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Laser.h">
+    <ClInclude Include="LevelLoader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Mirror.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -51,5 +57,10 @@
     <Font Include="ASSETS\FONTS\ariblk.ttf">
       <Filter>Resource Files\ASSETS\FONTS</Filter>
     </Font>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ASSETS\level1.yaml">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

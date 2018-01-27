@@ -1,9 +1,9 @@
 // author Peter Lowe
-// no, Adam did it. ;)
 #ifndef GAME
 #define GAME
 
-#include "Laser.h"
+#include <SFML/Graphics.hpp>
+#include "Mirror.h"
 
 class Game
 {
@@ -14,7 +14,6 @@ public:
 	/// main method for game
 	/// </summary>
 	void run();
-	//int static const MAX_LASERS = 0;
 
 private:
 
@@ -28,10 +27,11 @@ private:
 	sf::RenderWindow m_window; // main SFML window
 	sf::Font m_ArialBlackfont; // font used by message
 	sf::Text m_welcomeMessage; // text used for message on screen
-	sf::Texture m_backgroundTexture; // texture used for sfml logo
-	sf::Sprite m_backgroundSprite; // sprite used for sfml logo
+	sf::Texture m_logoTexture; // texture used for sfml logo
+	sf::Sprite m_logoSprite; // sprite used for sfml logo
 	bool m_exitGame; // control exiting game
-	Laser m_laser;
+	Mirrors m_mirrors;
+	LevelData m_level;
 };
 
 #endif // !GAME

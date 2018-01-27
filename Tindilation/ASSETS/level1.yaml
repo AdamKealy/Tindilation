@@ -1,0 +1,7 @@
+mirrors: 
+  - length: 150
+    position: {x: 200, y: 125}
+  - length: 150
+    position: {x: 500, y: 1125}
+  - length: 150
+    position: {x: 1700, y: 525}
