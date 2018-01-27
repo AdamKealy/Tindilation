@@ -2,33 +2,27 @@
 
 Laser::Laser()
 {
-	m_startPos = sf::Vector2f(0.f,0.f);
-	m_endPos = sf::Vector2f(0.f, 0.f);
+	xPos = 0.f;
+	yPos = 0.f;
 }
 
-Laser::Laser(sf::Vector2f start, sf::Vector2f end)
+Laser::Laser(float x, float y)
 {
-	//m_startPos = m_tempPos;
-	m_endPos = end;
-	m_tempPos = end;
-
-	numberOfLasers++;
+	//lines[].position = sf::Vector2f(x, y);
 }
 
-void Laser::generateLaser()
+void Laser::render(sf::RenderWindow & t_window)
 {
-	sf::VertexArray lines(sf::LinesStrip, 2);
+	t_window.draw(lines);
+}
 
-	lines[0].position = sf::Vector2f(10, 10);
-	lines[1].position = sf::Vector2f(150, 150);
-
+void Laser::loadData(LevelData t_leveloader)
+{
+	sf::VertexArray lines(sf::LinesStrip, MAX_LASERS);
 	
-	lines[0].color = sf::Color::Red;
-	lines[1].color = sf::Color::Red;
-
-}
-
-void Laser::render()
-{
-
+	for (int i = 0; i < MAX_LASERS; i++)
+	{
+		lines[i].color = sf::Color::Red;
+		lines[i].position = sf::Vector2f(xPos, xPos);
+	}
 }

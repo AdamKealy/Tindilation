@@ -8,6 +8,8 @@ void operator >> (const YAML::Node& mirrorNode, MirrorData& mirror)
 	mirror.position.y = mirrorNode["position"]["y"].as<float>();
 }
 
+//void operator >> (const YAML::Node& laserNode, )
+
 //checks information after the word credits
 void operator >> (const YAML::Node& levelNode, LevelData& level)
 {
@@ -18,6 +20,12 @@ void operator >> (const YAML::Node& levelNode, LevelData& level)
 		mirrorNode[i] >> mirror;
 		level.m_mrrors.push_back(mirror);
 	}
+}
+
+void operator >> (const YAML::Node& cableNode, CableData& cable)
+{
+	cable.position.x = cableNode["position"]["x"].as<float>();
+	cable.position.y = cableNode["position"]["y"].as<float>();
 }
 
 bool LevelLoader::load(int t_levelNum, LevelData & t_screen)

@@ -55,7 +55,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\..\..\pictures\SFML-LOGO.png">
+    <Image Include="ASSETS\IMAGES\background.png">
       <Filter>Resource Files\ASSETS\IMAGES</Filter>
     </Image>
   </ItemGroup>

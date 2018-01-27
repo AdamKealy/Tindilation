@@ -13,9 +13,16 @@ struct MirrorData
 	sf::Vector2f position;
 };
 
+struct CableData
+{
+	//int length;
+	sf::Vector2f position;
+};
+
 struct LevelData
 {
 	std::vector<MirrorData> m_mrrors;
+	std::vector<CableData> m_cable;
 };
 
 class LevelLoader

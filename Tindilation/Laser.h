@@ -1,18 +1,17 @@
 #pragma once
 #include "SFML\Graphics.hpp"
+#include "LevelLoader.h"
 
-sf::Vector2f static m_tempPos;
-int static numberOfLasers;
-
+int const MAX_LASERS = 17;
 class Laser
 {
 public:
 	Laser();
-	Laser(sf::Vector2f start,  sf::Vector2f end);
-	void generateLaser();
-	void render();
+	Laser(float x,  float y);
+	void render(sf::RenderWindow &t_window);
 	sf::VertexArray lines;
+	void loadData(LevelData t_leveloader);
 private:
-	sf::Vector2f m_startPos;
-	sf::Vector2f m_endPos;
+	float xPos;
+	float yPos;
 };
