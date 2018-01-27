@@ -7,10 +7,19 @@ void operator >> (const YAML::Node& mirrorNode, MirrorData& mirror)
 	mirror.position.x = mirrorNode["position"]["x"].as<float>();
 	mirror.position.y = mirrorNode["position"]["y"].as<float>();
 }
+//
+//void operator >> (const YAML::Node& laserNode, LaserData& laser)
+//{
+//	laser.position.x = laserNode["position"]["x"].as<float>();
+//	laser.position.y = laserNode["position"]["y"].as<float>();
+//}
 
-//void operator >> (const YAML::Node& laserNode, )
+void operator >> (const YAML::Node& cableNode, CableData& cable)
+{
+	cable.position.x = cableNode["position"]["x"].as<float>();
+	cable.position.y = cableNode["position"]["y"].as<float>();
+}
 
-//checks information after the word credits
 void operator >> (const YAML::Node& levelNode, LevelData& level)
 {
 	const YAML::Node& mirrorNode = levelNode["mirrors"].as<YAML::Node>();
@@ -20,12 +29,15 @@ void operator >> (const YAML::Node& levelNode, LevelData& level)
 		mirrorNode[i] >> mirror;
 		level.m_mrrors.push_back(mirror);
 	}
-}
 
-void operator >> (const YAML::Node& cableNode, CableData& cable)
-{
-	cable.position.x = cableNode["position"]["x"].as<float>();
-	cable.position.y = cableNode["position"]["y"].as<float>();
+	//const YAML::Node& laserNode = levelNode["lasers"].as<YAML::Node>();
+	//for (unsigned i = 0; i < laserNode.size(); i++)
+	//{
+	//	LaserData laser;
+	//	laserNode[i] >> laser;
+	//	level.m_laser.push_back(laser);
+	//}
+
 }
 
 bool LevelLoader::load(int t_levelNum, LevelData & t_screen)

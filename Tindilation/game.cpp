@@ -17,7 +17,7 @@ Game::Game() :
 		return;
 	}
 	m_mirrors.loadMirrors(m_level);
-
+	//m_laser.loadData(m_level);
 }
 
 
