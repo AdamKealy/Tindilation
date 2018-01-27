@@ -36,7 +36,7 @@
     <ClCompile Include="Mirror.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Cable.cpp">
+    <ClCompile Include="Laser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -50,12 +50,12 @@
     <ClInclude Include="Mirror.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Cable.h">
+    <ClInclude Include="Laser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\..\..\pictures\SFML-LOGO.png">
+    <Image Include="ASSETS\IMAGES\background.png">
       <Filter>Resource Files\ASSETS\IMAGES</Filter>
     </Image>
   </ItemGroup>
