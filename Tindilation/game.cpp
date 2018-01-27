@@ -17,7 +17,7 @@ Game::Game() :
 		return;
 	}
 	m_mirrors.loadMirrors(m_level);
-
+	//m_laser.loadData(m_level);
 }
 
 
@@ -64,8 +64,9 @@ void Game::processEvents()
 			{
 				m_exitGame = true;
 			}
-			m_mirrors.rotate();
+			
 		}
+		m_mirrors.rotate(event);
 	}
 }
 
@@ -79,6 +80,7 @@ void Game::update(sf::Time t_deltaTime)
 	{
 		m_window.close();
 	}
+	
 }
 
 /// <summary>

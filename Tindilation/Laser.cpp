@@ -2,25 +2,24 @@
 
 Laser::Laser()
 {
-	xPos = 0.f;
-	yPos = 0.f;
-}
-
-Laser::Laser(float x, float y)
-{
-	lines[numberOfLasers].position = sf::Vector2f(x, y);
-	
-	numberOfLasers++;
 }
 
 void Laser::render(sf::RenderWindow & t_window)
 {
-	sf::VertexArray lines(sf::LinesStrip, 1);
+	sf::Vector2f meep(10, 10);
+	sf::VertexArray lines(sf::LinesStrip, MAX_LASERS);
+	for (int i = 0; i < MAX_LASERS; i++)
+	{
+		lines[i].color = sf::Color::Red;
+		lines[i].position = meep;
 
-	lines[numberOfLasers].color = sf::Color::Red;
-	lines[numberOfLasers +1].color = sf::Color::Red;
-	lines[numberOfLasers].position = sf::Vector2f(xPos, xPos);
-	lines[numberOfLasers + 1].position = sf::Vector2f(xPos, yPos);
+		meep.x+=100;
+		meep.y+=100;
+		t_window.draw(lines);
+	}
+}
 
-	t_window.draw(lines);
+void Laser::loadData(LevelData t_leveloader)
+{
+
 }

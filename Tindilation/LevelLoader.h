@@ -15,14 +15,19 @@ struct MirrorData
 
 struct CableData
 {
-	//int length;
 	sf::Vector2f position;
 };
+
+//struct LaserData
+//{
+//	sf::Vector2f position;
+//};
 
 struct LevelData
 {
 	std::vector<MirrorData> m_mrrors;
-	std::vector<CableData> m_cable;
+	std::vector<CableData> m_cable;/*
+	std::vector<LaserData> m_laser;*/
 };
 
 class LevelLoader
