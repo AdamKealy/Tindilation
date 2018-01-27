@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Cable.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Laser.cpp" />
     <ClCompile Include="LevelLoader.cpp" />
@@ -26,6 +27,7 @@
     <ClCompile Include="Mirror.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Cable.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Laser.h" />
     <ClInclude Include="LevelLoader.h" />
