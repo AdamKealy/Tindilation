@@ -1,13 +1,18 @@
 #pragma once
 #include "SFML\Graphics.hpp"
 
+sf::Vector2f static m_tempPos;
+int static numberOfLasers;
+
 class Laser
 {
 public:
 	Laser();
-	Laser(sf::Vector2f start, float angle);
+	Laser(sf::Vector2f start,  sf::Vector2f end);
+	void generateLaser();
+	void render();
+	sf::VertexArray lines;
 private:
 	sf::Vector2f m_startPos;
-	float m_angle;
-	sf::Vertex line[2];
+	sf::Vector2f m_endPos;
 };
