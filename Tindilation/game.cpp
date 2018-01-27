@@ -1,16 +1,22 @@
 // author Peter Lowe
 
 #include "Game.h"
+#include "LevelLoader.h"
 #include <iostream>
 
 
 
 Game::Game() :
-	m_window{ sf::VideoMode{ 800, 600, 32 }, "SFML Game" },
+	m_window{ sf::VideoMode{ 3500, 1500, 32 }, "SFML Game" },
 	m_exitGame{false} //when true game will exit
 {
 	setupFontAndText(); // load font 
 	setupSprite(); // load texture
+	if (!LevelLoader::load(1, m_level))
+	{
+		return;
+	}
+	m_mirrors.loadMirrors(m_level);
 }
 
 
@@ -57,6 +63,7 @@ void Game::processEvents()
 			{
 				m_exitGame = true;
 			}
+			m_mirrors.rotate();
 		}
 	}
 }
@@ -78,9 +85,10 @@ void Game::update(sf::Time t_deltaTime)
 /// </summary>
 void Game::render()
 {
-	m_window.clear(sf::Color::White);
-	m_window.draw(m_welcomeMessage);
-	m_window.draw(m_logoSprite);
+	m_window.clear();
+
+	m_mirrors.draw(m_window);
+
 	m_window.display();
 }
 

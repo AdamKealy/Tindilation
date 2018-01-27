@@ -5,6 +5,8 @@
 /// @date May 21017
 /// </summary>
 
+#include "Game.h"
+
 #ifdef _DEBUG 
 #pragma comment(lib,"sfml-graphics-d.lib") 
 #pragma comment(lib,"sfml-audio-d.lib") 
@@ -19,8 +21,8 @@
 #pragma comment(lib,"sfml-network.lib") 
 #endif 
 
+#pragma comment(lib,"libyaml-cppmdd") 
 
-#include "Game.h"
 
 /// <summary>
 /// main enrtry point
