@@ -22,4 +22,5 @@ public:
 	void draw(sf::RenderWindow & t_window);
 	void rotate(sf::Event t_event);
 	void loadMirrors(LevelData m_data);
+	sf::RectangleShape* getMirrorArray();
 };

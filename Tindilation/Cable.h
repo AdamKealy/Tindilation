@@ -17,5 +17,6 @@ public:
 	Cable();
 	void load(LevelData m_data);
 	void draw(sf::RenderWindow & t_window);
+	sf::RectangleShape * getCableArray();
 };
 

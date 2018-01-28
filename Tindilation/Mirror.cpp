@@ -79,3 +79,8 @@ void Mirrors::loadMirrors(LevelData m_data)
 		mirror[numOfMirrors].setPosition(m_data.m_mrrors.at(numOfMirrors).position.x, m_data.m_mrrors.at(numOfMirrors).position.y);
 	}
 }
+
+sf::RectangleShape* Mirrors::getMirrorArray()
+{
+	return mirror;
+}

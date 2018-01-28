@@ -25,3 +25,8 @@ void Cable::draw(sf::RenderWindow & t_window)
 		t_window.draw(cableWalls[index]);
 	}
 }
+
+sf::RectangleShape * Cable::getCableArray()
+{
+	return cableWalls;
+}

@@ -10,14 +10,7 @@ Game::Game() :
 	m_window{ sf::VideoMode{ 3500, 1500, 32 }, "SFML Game" },
 	m_exitGame{false} //when true game will exit
 {
-	setupFontAndText(); // load font 
 	setupSprite(); // load texture
-	if (!LevelLoader::load(1, m_level))
-	{
-		return;
-	}
-	m_mirrors.loadMirrors(m_level);
-	//m_laser.loadData(m_level);
 }
 
 
@@ -67,6 +60,7 @@ void Game::processEvents()
 			
 		}
 		m_mirrors.rotate(event);
+		m_menu.input(event, m_window);
 	}
 }
 
@@ -80,7 +74,10 @@ void Game::update(sf::Time t_deltaTime)
 	{
 		m_window.close();
 	}
-	
+	if (m_menu.gameStart)
+	{
+		m_laser.collision(m_mirrors.getMirrorArray(), m_cable.getCableArray(), m_mirrors.MAX_NUM, m_cable.MAX_RECTANGLES);
+	}
 }
 
 /// <summary>
@@ -90,22 +87,28 @@ void Game::render()
 {
 	m_window.clear();
 	m_window.draw(m_backgroundSprite);
-	m_mirrors.draw(m_window);
-	m_laser.render(m_window);
-
-	m_window.display();
-}
-
-/// <summary>
-/// load the font and setup the text message for screen
-/// </summary>
-void Game::setupFontAndText()
-{
-	if (!m_ArialBlackfont.loadFromFile("ASSETS\\FONTS\\ariblk.ttf"))
+	if (m_menu.gameStart)
 	{
-		std::cout << "problem loading arial black font" << std::endl;
+		m_cable.draw(m_window);
+		m_laser.render(m_window);
+		m_mirrors.draw(m_window);
+	}
+	else
+	{
+		int temp = m_menu.draw(m_window);
+		if (temp != 6)
+		{
+			if (!LevelLoader::load(temp, m_level))
+			{
+				return;
+			}
+			m_mirrors.loadMirrors(m_level);
+			m_cable.load(m_level);
+			m_laser.loadData(m_level);
+		}		
 	}
 
+	m_window.display();
 }
 
 /// <summary>
