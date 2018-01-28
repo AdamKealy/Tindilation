@@ -7,7 +7,7 @@ class Cable
 public:
 	static const int MAX_RECTANGLES = 10;
 	static const int RECTANGLE_THICKNESS = 80;
-
+	int length = 10;
 private:
 	int noOfRectangles; 
 	sf::RectangleShape cableWalls[MAX_RECTANGLES];
