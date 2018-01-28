@@ -1,4 +1,4 @@
-mirrors: 
+mirrors:
   - length: 150
     position: {x: 1200, y: 125}
   - length: 150
@@ -6,21 +6,18 @@ mirrors:
   - length: 150
     position: {x: 1700, y: 325}
 cables:
-  - position: {x: 200, y: 1500}
+  - position: {x: 200, y: 500}
     length: 400
     rotation: 0
-  - position: {x: 2300, y: 750}
+  - position: {x: 300, y: 750}
     length: 400
     rotation: 90
   - position: {x: 450, y: 800}
     length: 400
     rotation: 0
-  - position: {x: 750, y: 1450}
+  - position: {x: 750, y: 450}
     length: 400
     rotation: 0
   - position: {x: 1450, y: 550} 
     length: 400
     rotation: 0
-laser:
-    position: {x: 100, y: 700}
-    rotation: 7
