@@ -36,7 +36,7 @@ private:
 	Mirrors m_mirrors;
 	LevelData m_level;
 	Laser m_laser;
-	Cable m_cable;
+	Cable m_cables;
 	Menu m_menu;
 };
 

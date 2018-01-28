@@ -18,6 +18,9 @@ void operator >> (const YAML::Node& cableNode, CableData& cable)
 {
 	cable.position.x = cableNode["position"]["x"].as<float>();
 	cable.position.y = cableNode["position"]["y"].as<float>();
+	cable.length.x = cableNode["length"]["x"].as<float>();
+	cable.length.y = cableNode["length"]["y"].as<float>();
+	cable.rotation = cableNode["rotation"].as<float>();
 }
 
 void operator >> (const YAML::Node& levelNode, LevelData& level)
@@ -28,6 +31,13 @@ void operator >> (const YAML::Node& levelNode, LevelData& level)
 		MirrorData mirror;
 		mirrorNode[i] >> mirror;
 		level.m_mrrors.push_back(mirror);
+	}
+	const YAML::Node& cableNode = levelNode["cables"].as<YAML::Node>();
+	for (unsigned i = 0; i < cableNode.size(); ++i)
+	{
+		CableData cable;
+		cableNode[i] >> cable;
+		level.m_cable.push_back(cable);
 	}
 
 	//const YAML::Node& laserNode = levelNode["lasers"].as<YAML::Node>();

@@ -1,4 +1,4 @@
-mirrors: 
+mirrors:
   - length: 150
     position: {x: 200, y: 125}
   - length: 150
@@ -6,18 +6,12 @@ mirrors:
   - length: 150
     position: {x: 1700, y: 525}
 cables:
-  - position: {x: 200, y: 500}
-    length: 400
+  - position: {x: 200, y: 750}
+    length: {x: 500, y: 5}
     rotation: 0
-  - position: {x: 300, y: 750}
-    length: 400
-    rotation: 90
-  - position: {x: 450, y: 800}
-    length: 400
+  - position: {x: 750, y: 750}
+    length: {X: 500, y: 5}
     rotation: 0
-  - position: {x: 750, y: 450}
-    length: 400
-    rotation: 0
-  - position: {x: 1450, y: 550} 
-    length: 400
+  - position: {x: 1250, y: 750}
+    length: {x: 500, y: 5}
     rotation: 0

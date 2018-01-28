@@ -16,6 +16,8 @@ struct MirrorData
 struct CableData
 {
 	sf::Vector2f position;
+	sf::Vector2f length;
+	int rotation;
 };
 
 //struct LaserData
